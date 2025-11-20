@@ -1,0 +1,3 @@
+/home/nagyszabolcs/source/repos/SDLEngine/build/CMakeFiles/SDLEngine.dir
+/home/nagyszabolcs/source/repos/SDLEngine/build/CMakeFiles/edit_cache.dir
+/home/nagyszabolcs/source/repos/SDLEngine/build/CMakeFiles/rebuild_cache.dir
