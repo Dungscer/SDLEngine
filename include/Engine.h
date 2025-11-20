@@ -1,14 +1,17 @@
-#ifndef ENGINE_H
-#define ENGINE_H
-
+#pragma once
 #include <SDL2/SDL.h>
+#include <SDL2/SDL2_gfxPrimitives.h>
 #include <vector>
+
+enum class TileType {
+    Desert,
+    Forest,
+    Water
+};
 
 struct Point {
     int x, y;
 };
-
-enum class TileType { Desert, Forest, Water };
 
 class Engine {
 public:
@@ -22,18 +25,21 @@ public:
 private:
     SDL_Window* window;
     SDL_Renderer* renderer;
-    bool isRunning;
+    SDL_Texture* hexBorder;   // <-- a border textúrához
 
-    static const int mapWidth = 10;
-    static const int mapHeight = 10;
-    static const int hexSize = 40;
+    const int hexSize = 40;
+    int hexWidth;
+    int hexHeight;
+
+    const int mapWidth = 20;
+    const int mapHeight = 20;
 
     std::vector<std::vector<TileType>> map;
 
     void generateMap();
     void renderMap();
-    std::vector<Point> getHexPoints(int centerX, int centerY, int size);
-    SDL_Color tileColor(TileType type);
-};
 
-#endif
+    std::vector<Point> getHexPoints(int cx, int cy, int size);
+    SDL_Color tileColor(TileType t);
+    void generateHexBorderTexture(); // <-- border generálás
+};

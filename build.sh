@@ -6,4 +6,10 @@ sudo apt install cmake
 
 cmake ..
 make
-./SDLEngine
+
+if [ -f ./SDLEngine ]; then
+    ./SDLEngine
+    exit 0
+fi
+echo "Build not completed"
+exit 1
