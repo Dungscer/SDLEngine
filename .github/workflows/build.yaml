@@ -26,3 +26,7 @@ jobs:
         run: sudo rm -rf ./SDL
 
       - uses: actions/checkout@v4
+      - name: Run Build
+        run: |
+          chmod +x ./build.sh
+          ./build.sh
