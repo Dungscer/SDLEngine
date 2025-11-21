@@ -1,8 +1,9 @@
+rm -rf build
 mkdir build
 cd build
 
-sudo apt update
-sudo apt install cmake
+#sudo apt update
+#sudo apt install cmake
 
 cmake ..
 make
